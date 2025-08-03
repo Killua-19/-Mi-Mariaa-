@@ -1,1 +1,66 @@
-# -Mi-Mariaa-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🐾Mi Mariaa💗</title>
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+      padding-top: 100px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: white;
+      font-size: 3em;
+    }
+
+    .heart {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Emoji_u1f497.svg/32px-Emoji_u1f497.svg.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🐾Mi Mariaa💗</h1>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop hidden>
+    <source src="URL_DE_TU_AUDIO.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Corazones flotando -->
+  <script>
+    for (let i = 0; i < 40; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      heart.style.width = heart.style.height = (Math.random() * 20 + 10) + "px";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
