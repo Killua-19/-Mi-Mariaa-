@@ -4,9 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🐾Mi Mariaa💗</title>
+  <style>
+    body {
+      background-color: pink;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      text-align: center;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    h1 {
+      color: white;
+      font-size: 3em;
+      margin-top: 100px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: white;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Emoji_u1f497.svg/32px-Emoji_u1f497.svg.png') no-repeat center center;
+      background-size: contain;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    iframe {
+      margin-top: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+  </style>
 </head>
-<body style="background-color: pink; text-align: center; padding-top: 100px;">
-  <h1 style="color: white; font-size: 3em;">🐾Mi Mariaa💗</h1>
-  <p style="font-size: 1.5em;">Este es mi sitio especial hecho con mucho cariño.</p>
+<body>
+  <h1>🐾Mi Mariaa💗</h1>
+  <p>Este es mi sitio especial hecho con mucho cariño.</p>
+
+  <iframe width="300" height="170" src="https://www.youtube.com/embed/l08Zw-RY__Q"
+    title="Billie Eilish - Wildflower (Lyric Video)"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <!-- Corazones flotando -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      heart.style.width = heart.style.height = (Math.random() * 20 + 10) + "px";
+      document.body.appendChild(heart);
+    }
+  </script>
 </body>
 </html>
